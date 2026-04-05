@@ -5,6 +5,7 @@ import Favourite from "./Pages/Favourite";
 import Error from "./Pages/Error";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   return (
@@ -13,10 +14,11 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
-        <Route path="/movie-details" element={<MovieDetails />} />
+        <Route path="/movie-details/:id" element={<MovieDetails />} />
         <Route path="/fav" element={<Favourite />} />
         <Route path="*" element={<Error />} />
       </Routes>
+      <ToastContainer />
     </BrowserRouter>
   );
 };
